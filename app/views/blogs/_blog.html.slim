@@ -1,3 +1,8 @@
-= blog.title
-br
-= blog.content
+table
+  tr
+    td
+      = blog.title
+    td
+      = blog.content
+    td
+      = link_to 'show',blog_path(blog)
