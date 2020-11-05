@@ -8,3 +8,5 @@ table
       = link_to 'show',blog_path(blog)
     td
       = link_to 'edit',edit_blog_path(blog)
+    td
+      = link_to 'destroy', blog_path(blog), method: :delete, data: { confirm: 'Are you sure?' }

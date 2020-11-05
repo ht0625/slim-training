@@ -26,17 +26,23 @@ class BlogsController < ApplicationController
 
   def update
     if @blog.update(blog_params)
-      redirect_to blogs_path, notice: "編集完了"
+      redirect_to blogs_path, notice: "編集しました"
     else
       render :edit
     end
   end
+
+  def destroy
+    @blog.destroy
+    redirect_to blogs_path, notice: "削除しました"
+  end
+
   private
 
   def set_blog
     @blog = Blog.find(params[:id])
   end
-  
+
   def blog_params
     params.require(:blog).permit(:title, :content)
   end
